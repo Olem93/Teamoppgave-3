@@ -1,13 +1,16 @@
 
 #item-grid{
+    text-align: center;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
 .rute{ 
+    height: 80px;
+    width: 80px;
     background-color: antiquewhite;
-    border: gray;
+    border: solid black;
 
 >>>>>>> 9bacfd52cd60a8b574bf5377fa17e7a487bc2d9d
 }
