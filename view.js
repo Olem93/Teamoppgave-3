@@ -10,22 +10,30 @@ function updateView(){
     
     
     
-    
-    
-    
-    
     document.getElementById('appOppgave3').innerHTML = html
 
 }
 
 function spawnItems(){
-    let items = "";
-    for (let i = 0; i < 16; i++)
-        if (){
-            items += /*HTML*/ `<div class="rute"></div>`
+    let html = "";
+    for (let i = 0; i < 16; i++){
+        boxTest = Math.floor(Math.random() * 16)
+        itemTest = Math.floor(Math.random() * items.length)
+        console.log(itemTest)
+        if (boxTest > 4){
+            html += /*HTML*/ `<div class="rute"></div>`
+        } else {
+            html += /*HTML*/ `<div style="cursor: pointer" class="rute" onclick="takeItem()">${items[itemTest]}</div>`
         }
+    }
 
         
 
-    return items
+    return html
 }
+
+
+function takeItem(){
+
+}
+

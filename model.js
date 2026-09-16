@@ -1,5 +1,8 @@
 let items = [
-  "Solbriller",
+    {
+        Item: "Solbriller",
+        Points: -10,
+    }
   "Kvikklunsj",
   "Fet spoiler",
   "Fete felger",
@@ -14,3 +17,7 @@ let items = [
   "Pinne",
   "Bananskall",
 ];
+
+
+let boxTest = null;
+let itemTest = null;

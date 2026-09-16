@@ -1,11 +1,14 @@
 #item-grid{
+    text-align: center;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
 .rute{ 
+    height: 80px;
+    width: 80px;
     background-color: antiquewhite;
-    border: gray;
+    border: solid black;
 
 }
