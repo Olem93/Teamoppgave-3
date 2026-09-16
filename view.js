@@ -15,18 +15,21 @@ function spawnItems() {
   let html = "";
   for (let i = 0; i < 16; i++) {
     boxTest = Math.floor(Math.random() * 16);
-    itemTest = Math.floor(Math.random() * items.length);
-    console.log(itemTest);
+    itemNum = Math.floor(Math.random() * items.length);
     if (boxTest > 4) {
       html += /*HTML*/ `<div class="rute"></div>`;
     } else {
-      html += /*HTML*/ `<div style="cursor: pointer" class="rute" onclick="takeItem()">${items[itemTest].Item}</div>`;
+      html += /*HTML*/ `<div style="cursor: pointer" class="rute" onclick="takeItem(items[${itemNum}])">${items[itemNum].Item}</div>`;
     }
   }
 
   return html;
 }
 
-function takeItem() {}
+function takeItem(item) {
+  console.log(item)
+
+
+}
 
 
