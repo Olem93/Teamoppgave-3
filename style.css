@@ -1,12 +1,13 @@
-.body{
-    background-color: black;
-    color: white;
-    font-family: Arial;
-    text-align: center;
-    padding: 20px;
+
+#item-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
-.cool-display{
-    font-size: 24px;
-    color:  yellow;
-    margin-bottom: 20px;
+
+.rute{ 
+    background-color: antiquewhite;
+    border: gray;
+
+>>>>>>> 9bacfd52cd60a8b574bf5377fa17e7a487bc2d9d
 }
