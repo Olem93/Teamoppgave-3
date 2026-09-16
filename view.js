@@ -1,8 +1,10 @@
+let coolMeter = 20;
+
 updateView();
 function updateView() {
   html = /*HTML*/ `
         <h1>test</h1>
-
+        <div>Kul-o-meter😎🔥: ${coolMeter}</div>
         <section id="item-grid">${spawnItems()}</section>
     `;
 
@@ -26,3 +28,5 @@ function spawnItems() {
 }
 
 function takeItem() {}
+
+
