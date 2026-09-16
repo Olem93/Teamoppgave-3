@@ -23,7 +23,7 @@ function spawnItems(){
         if (boxTest > 4){
             html += /*HTML*/ `<div class="rute"></div>`
         } else {
-            html += /*HTML*/ `<div style="cursor: pointer" class="rute" onclick="takeItem()">${items[itemTest]}</div>`
+            html += /*HTML*/ `<div style="cursor: pointer" class="rute" onclick="takeItem()">${items[itemTest].Item}</div>`
         }
     }
 
