@@ -23,18 +23,21 @@ function politiOppdagelse(){
     let oppdagelse = rngMathRandom();
 
     if(oppdagelse < 30){
-        resultat = "👮 Politimannen lener seg inn mot vinduet... og sier "Hm. Hva er den lukta?" Du later som du ikke hørte spørsmålet. 👀"
+        resultat = "👮 Politimannen lener seg inn mot vinduet... og sier “Hm. Hva er den lukta?” Du later som du ikke hørte spørsmålet. 👀"
     }
     else if(oppdagelse < 60){
         resultat = "👮 Politimannen ser på deg. Så på øynene dine. Så på deg igjen. Har du drukket?";
+        return resultat + weedValg();
     }
     else{
         resultat = "👮 Politimannen kikker inn i bilen. Han finner ingenting mistenkelig. Kjør forsiktig. Du nikker alvorlig og kjører av gårde som om ingenting har skjedd.";
     }
 }
 
-function politiValg(valg){
+function weedValg(valg){
     if(valg === "bortforklare"){
+        resultat = "Det er bare en ny type luftfrisker. Den heter Jamaica Breeze. 🌿😎";
+        coolMeter += 100;
 
     }
     else if (valg ==="stikkeAv"){
@@ -47,3 +50,24 @@ function politiValg(valg){
 function rngMathRandom(){
     return Math.floor(Math.random()*100)+1;
 }
+
+/*
+Politi kontroll:
+    xx% sjanse Du blir vinket inn til kontrollen:
+        30% sjanse at politi lukter rev. 
+            bortforklarer 
+                50% sjanse for at politiet aksepterer bortforklaringen +XX
+                50% sjanse for at politiet gir deg bot -XX
+            stikker av
+                20% sjanse for at du får mange kulhetspoeng (+XXX cool)		
+                80% sjanse for at du mister mange kulhetspoeng (-XXX cool)
+        20% sjanse at politi merker du er beruset på alkohol. 
+            bortforklarer
+                50% sjanse for at politiet aksepterer bortforklaringen +XX
+                50% sjanse for at politiet gir deg bot -XX
+            stikker av        
+                20% sjanse for at du får mange kulhetspoeng (+XXX cool)		
+                80% sjanse for at du mister mange kulhetspoeng (-XXX cool)
+
+
+*/
