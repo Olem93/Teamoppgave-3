@@ -1,8 +1,8 @@
 let items = [
     {
         Item: "Solbriller",
-        Points: -10,
-    }
+        Points: 10,
+    },
   "Kvikklunsj",
   "Fet spoiler",
   "Fete felger",
