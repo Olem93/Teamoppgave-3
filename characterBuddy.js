@@ -1,15 +1,15 @@
 // characterBuddy.js
 
 let highCoolDialogs = [
-  "A: oi sjekk den fete bilen!",
-  "B: damn my boy!",
-  "C: takk bro" 
+  "Oi, sjekk den fete bilen!",
+  "Damn, my boy!",
+  "Takk, bro!" 
 ];
 
 let lowCoolDialogs = [
-   "A: Halla", 
-   "B: yo...",
-   "C: den er grei"
+   "Halla", 
+   "Yo...",
+   "Den er grei.."
 ];
 
 let venner = [
