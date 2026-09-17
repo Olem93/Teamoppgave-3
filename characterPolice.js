@@ -5,41 +5,40 @@
 function policeControl(){
     
     if(rngMathRandom() >= kontrollsjanse){
-        return "Du kjører forbi politikontrollen. Du prøver å se så uskyldig ut at du nesten blir mistenkelig. 👀";
+        message = "Du kjører forbi politikontrollen. Du prøver å se så uskyldig ut at du nesten blir mistenkelig. 👀";
     }
     else{
         message = "🚨 Du blir vinket inn til kontrollen."
         
-        message += politiOppdagelse();
-
-        return message;
+        message += policeDetection();
     }
+    updateView();
 }
 
 //Hva oppdager politiet?
 
-function politiOppdagelse(){
+function policeDetection(){
 
-    let oppdagelse = rngMathRandom();
+    let detection = rngMathRandom();
 
-    if(oppdagelse <= 30){
+    if(detection <= 30){
         message = "👮 Politimannen lener seg inn mot vinduet... og sier “Hm. Hva er den lukta?” Du later som du ikke hørte spørsmålet. 👀"
         
         choice = /*HTML*/ `
-            <button onclick="weedChoice('makeExcuse')">Bortforklar 😎<button>
-            <button onclick="weedChoice('flee')">Stikke av 👀<button>
+            <button onclick="weedChoice('makeExcuse')">Bortforklar 😎</button>
+            <button onclick="weedChoice('flee')">Stikke av 👀</button>
         `;
 
         message += choice;
 
         return message;
     }
-    else if(oppdagelse <= 60){
+    else if(detection <= 60){
         message = "👮 Politimannen ser på deg. Så på øynene dine. Så på deg igjen, og spurte “Har du drukket?”";
         
         choice = /*HTML*/`
-            <button onclick="weedChoice('makeExcuse')">Bortforklar 😎<button>
-            <button onclick="weedChoice('flee')">Stikke av 👀 🚗🚓<button>       
+            <button onclick="weedChoice('makeExcuse')">Bortforklar 😎</button>
+            <button onclick="weedChoice('flee')">Stikke av 👀 🚗🚓</button>       
          `;
 
          message += choice;
@@ -47,7 +46,7 @@ function politiOppdagelse(){
          return message;
     }
     else{
-        message = "👮 Politimannen kikker inn i bilen. Han finner ingenting mistenkelig. “Kjør forsiktig” sa han. Du nikker alvorlig og kjører av gårde som om ingenting har skjedd.";
+        message = "👮 Politimannen kikker inn i bilen. Han finner ingenting mistenkelig. “Kjør forsiktig” sa han. Du nikker, smiler og kjører av gårde som om ingenting har skjedd.";
 
         return message;
     }
