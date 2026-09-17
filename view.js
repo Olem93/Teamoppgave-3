@@ -1,5 +1,3 @@
-let coolMeter = 20;
-
 updateView();
 function updateView() {
   html = /*HTML*/ `
@@ -26,10 +24,5 @@ function spawnItems() {
   return html;
 }
 
-function takeItem(item) {
-  console.log(item)
-
-
-}
 
 

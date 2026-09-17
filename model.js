@@ -59,3 +59,4 @@ let items = [
 
 let boxTest = null;
 let itemTest = null;
+let coolMeter = 0;
