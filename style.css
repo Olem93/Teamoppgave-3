@@ -14,7 +14,49 @@
     width: 80px;
 }
 
+
 .counter{
     max-width: 800px;
     margin: 0 auto;
+}
+
+
+.lane {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  border-left: 2px dashed white;
+  transform: translateX(-50%);
+ }
+ .road {
+  position: relative;
+  width: 300px;
+  height: 380px;
+  border-left: 10px solid yellow;
+  border-right: 10px solid yellow;
+  margin: 2px auto;
+  background-color: grey;
+  bottom: 50px;
+  top: 40px;
+}
+body {
+  background-color: black; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.score {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 100px;
+  color: yellow;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+
 }
