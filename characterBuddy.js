@@ -1,21 +1,16 @@
 // characterBuddy.js
 
 let highCoolDialogs = [
-  "Oi, sjekk den fete bilen!",
-  "Damn, my boy!",
-  "Takk, bro!" 
+  "A: oi sjekk den fete bilen!",
+  "B: damn my boy!",
+  "C: takk bro" 
 ];
 
 let lowCoolDialogs = [
-   "Halla.", 
-   "yo...",
-   "den er grei..."
+   "A: Halla", 
+   "B: yo...",
+   "C: den er grei"
 ];
-
-let wrongAnswer = [
-  "Oi, det så ikke ut som om de likte det...",
-  "Vennen din ser ikke blid ut. De forventet nok noe annet..."
-]
 
 let venner = [
   "Lars Monsen",

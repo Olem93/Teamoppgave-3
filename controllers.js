@@ -12,8 +12,6 @@ function setRandomEncounter(){
     policeControl()
   } else if (randomEncounter === 2) {
     granmaTrigger()
-  } else if (randomEncounter === 3) {
-    meetBuddy()
   }
 }
 
