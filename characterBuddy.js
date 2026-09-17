@@ -30,9 +30,11 @@ let venner = [
 function meetBuddy(){
   message = /*HTML*/ `Du møter en venn. Det er ${venner[Math.floor(Math.random() * venner.length)]}!
   Vennen din hilser. Hva sier du?
-  
+  <br>
   <button onclick="buddyDialog()">Halla broshan!</button>
+  <br>
   <button onclick="buddyDialog()">Ut på tur, aldri sur.</button>
+  <br>
   <button onclick="buddyDialog()">Gjem deg og lat som om du ikke så dem</button>
   `
 
