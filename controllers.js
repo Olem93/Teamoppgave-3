@@ -12,3 +12,12 @@ function setRandomEncounter(){
     squirrelRoadkill()
   }
 }
+
+function chance(percent){
+    return rngMathRandom() <= percent;
+}
+
+//RNG funksjon
+function rngMathRandom(){
+    return Math.floor(Math.random()*100)+1;
+}
