@@ -4,8 +4,7 @@ let itemTest = null;
 let coolMeter = 0;
 let numberSquirrelKill = 0;
 let randomEncounter = "";
-let message = ""
-
+let message = "";
 
 // Politi greier
 let kontrollsjanse = 30;
@@ -14,6 +13,8 @@ let makeExcuse;
 let flee;
 let choice;
 
+// Granma stuff
+let granmaChance = 30;
 
 let items = [
   {
@@ -73,4 +74,3 @@ let items = [
     Points: -15,
   },
 ];
-
