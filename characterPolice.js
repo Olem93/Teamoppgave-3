@@ -1,13 +1,4 @@
-        let kontrollsjanse = 30;
 
-let makeExcuse;
-let flee;
-let result = "";
-let message;
-let choice;
-
-let coolMeter = 0;
-let squirrelRoadkill = 0;
 
 //Sjanse for å bli vinket inn til kontroll.
 
@@ -142,14 +133,13 @@ Politi kontroll:
 
 function squirrelRoadkill(){
     if(chance(50)){
-        squirrelRoadkill++;
+        numberSquirrelKill++;
 
         message = `
             BANG! Du kjørte på et ekorn! 🐿️💥🚗
             <br>
             -10 cool 😵‍💫
             <br>
-            Antall ekorn påkjørt: ${squirrelRoadkill}
         `;
 
         coolMeter -= 10;

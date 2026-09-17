@@ -1,3 +1,20 @@
+//View greier
+let boxTest = null;
+let itemTest = null;
+let coolMeter = 0;
+let numberSquirrelKill = 0;
+let randomEncounter = "";
+let message = ""
+
+
+// Politi greier
+let kontrollsjanse = 30;
+let result = "";
+let makeExcuse;
+let flee;
+let choice;
+
+
 let items = [
   {
     Item: "Solbriller",
@@ -57,6 +74,3 @@ let items = [
   },
 ];
 
-let boxTest = null;
-let itemTest = null;
-let coolMeter = 0;
