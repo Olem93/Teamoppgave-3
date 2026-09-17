@@ -7,8 +7,8 @@ function granmaTrigger() {
     `;
 
     message += choice;
-    return message;
   }
+  updateView()
 }
 
 function granmaChoice(choice) {
