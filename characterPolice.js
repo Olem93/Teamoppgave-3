@@ -1,8 +1,13 @@
-let kontrollsjanse = 30;
+        let kontrollsjanse = 30;
 
-let bortforklaring;
-let stikkeAv;
-let resultat = "";
+let makeExcuse;
+let flee;
+let result = "";
+let message;
+let choice;
+
+let coolMeter = 0;
+let squirrelRoadkill = 0;
 
 //Sjanse for å bli vinket inn til kontroll.
 
@@ -11,8 +16,11 @@ function policeControl(){
         return "Du kjører forbi politikontrollen. Du prøver å se så uskyldig ut at du nesten blir mistenkelig. 👀";
     }
     else{
-        resultat = "🚨 Du blir vinket inn til kontrollen."
-        return resultat + politiOppdagelse();
+        message = "🚨 Du blir vinket inn til kontrollen."
+        
+        message += politiOppdagelse();
+
+        return message;
     }
 }
 
@@ -22,30 +30,87 @@ function politiOppdagelse(){
 
     let oppdagelse = rngMathRandom();
 
-    if(oppdagelse < 30){
-        resultat = "👮 Politimannen lener seg inn mot vinduet... og sier “Hm. Hva er den lukta?” Du later som du ikke hørte spørsmålet. 👀"
+    if(oppdagelse <= 30){
+        message = "👮 Politimannen lener seg inn mot vinduet... og sier “Hm. Hva er den lukta?” Du later som du ikke hørte spørsmålet. 👀"
+        
+        choice = /*HTML*/ `
+            <button onclick="weedChoice('makeExcuse')">Bortforklar 😎<button>
+            <button onclick="weedChoice('flee')">Stikke av 👀<button>
+        `;
+
+        message += choice;
+
+        return message;
     }
-    else if(oppdagelse < 60){
-        resultat = "👮 Politimannen ser på deg. Så på øynene dine. Så på deg igjen. Har du drukket?";
-        return resultat + weedValg();
+    else if(oppdagelse <= 60){
+        message = "👮 Politimannen ser på deg. Så på øynene dine. Så på deg igjen, og spurte “Har du drukket?”";
+        
+        choice = /*HTML*/`
+            <button onclick="weedChoice('makeExcuse')">Bortforklar 😎<button>
+            <button onclick="weedChoice('flee')">Stikke av 👀 🚗🚓<button>       
+         `;
+
+         message += choice;
+
+         return message;
     }
     else{
-        resultat = "👮 Politimannen kikker inn i bilen. Han finner ingenting mistenkelig. Kjør forsiktig. Du nikker alvorlig og kjører av gårde som om ingenting har skjedd.";
+        message = "👮 Politimannen kikker inn i bilen. Han finner ingenting mistenkelig. “Kjør forsiktig” sa han. Du nikker alvorlig og kjører av gårde som om ingenting har skjedd.";
+
+        return message;
     }
 }
 
-function weedValg(valg){
-    if(valg === "bortforklare"){
-        resultat = "Det er bare en ny type luftfrisker. Den heter Jamaica Breeze. 🌿😎";
-        coolMeter += 100;
+function weedChoice(choice){
+    if(choice === "makeExcuse"){
+        
+        message = "Det er bare en ny type luftfrisker. Den heter Jamaica Breeze. 🌿😎";
+
+        if(chance(50)){
+        
+            result = `
+                Politimannen tror på forklaringen din! Du slapp unna! 😎
+            `;
+
+            coolMeter += 100;
+        }
+        else{
+
+            result = `
+                👮 "Den kjøper jeg ikke!" Du får en bot. 
+            `;
+
+            coolMeter -= 100;
+        }
+    }
+
+    else if (choice ==="flee"){
+        
+        if(chance(20)){
+            result = `
+                Du kom deg unna! 🚗 <br>+500 cool 😎</br>
+            `;
+
+            coolMeter += 500;
+
+        }
+        else{
+            result = `
+                Du blir tatt! Dette var en dårlig idé. <br>-500 cool 😢🚓</br>
+            `;
+
+            coolMeter -= 500;
+        }
 
     }
-    else if (valg ==="stikkeAv"){
-
-    }
-
+    updateView();
 
 }
+
+function chance(percent){
+    return rngMathRandom() <= percent;
+}
+
 //RNG funksjon
 function rngMathRandom(){
     return Math.floor(Math.random()*100)+1;
@@ -71,3 +136,37 @@ Politi kontroll:
 
 
 */
+
+
+
+
+function squirrelRoadkill(){
+    if(chance(50)){
+        squirrelRoadkill++;
+
+        message = `
+            BANG! Du kjørte på et ekorn! 🐿️💥🚗
+            <br>
+            -10 cool 😵‍💫
+            <br>
+            Antall ekorn påkjørt: ${squirrelRoadkill}
+        `;
+
+        coolMeter -= 10;
+    }
+    else if(chance(75)){
+        message = `
+            🚗 Et ekorn løp over veien. Du klarte akkurat å unngå det! 🐿️
+            <br>
+            +10 cool 😎
+        `;
+
+        coolMeter += 10;
+    }
+    else{
+        message = `
+            Veien er ekornfri... foreløpig. 🐿️👀
+        `;
+    }
+    updateView();
+}
