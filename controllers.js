@@ -5,13 +5,15 @@ function takeItem(item) {
 
 function setRandomEncounter(){
   //randomEncounter = Math.floor(Math.random()*5)
-  randomEncounter = 2
+  randomEncounter = 3
   if (randomEncounter === 0){
     squirrelRoadkill()
   } else if (randomEncounter === 1) {
     policeControl()
   } else if (randomEncounter === 2) {
     granmaTrigger()
+  } else if (randomEncounter === 3) {
+    meetBuddy()
   }
 }
 
