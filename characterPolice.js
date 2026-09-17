@@ -59,7 +59,7 @@ function weedChoice(choice){
 
         if(chance(50)){
         
-            result = `
+            message += `
                 Politimannen tror på forklaringen din! Du slapp unna! 😎
             `;
 
@@ -67,7 +67,7 @@ function weedChoice(choice){
         }
         else{
 
-            result = `
+            message += `
                 👮 "Den kjøper jeg ikke!" Du får en bot. 
             `;
 

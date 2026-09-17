@@ -2,14 +2,19 @@
 #item-grid{
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 150px);
     max-width: 800px;
     margin: 0 auto;
-    gap: 20px;
 }
 
 .rute{ 
+    margin-top: 10px;
+    margin-bottom: 10px;
     height: 80px;
     width: 80px;
+}
 
+.counter{
+    max-width: 800px;
+    margin: 0 auto;
 }

@@ -2,12 +2,14 @@
 updateView();
 function updateView() {
   html = /*HTML*/ `
-        <h1>test</h1>
-        <div>Kul-o-meter😎🔥: ${coolMeter}</div>
-        <div>Antall ekorn påkjørt: ${numberSquirrelKill}</div>
+        <h1 class="counter">Cool car, bro</h1>
+        <div class="counter">Kul-o-meter😎🔥: ${coolMeter}</div>
+        <div class="counter" style="margin-bottom: 50px">Antall ekorn påkjørt: ${numberSquirrelKill}</div>
         <section id="item-grid">${spawnItems()}</section>
         <button onclick="setRandomEncounter()">Ekkort Test</button>
         <div>${message}</div>
+        <br>
+        <div>Din bil: ${showItems()}</div>
     `;
 
   document.getElementById("appOppgave3").innerHTML = html;
@@ -26,5 +28,12 @@ function spawnItems() {
   }
 
   return html;
+}
+
+function showItems(){
+  let html = `
+    <div></div>
+  `
+  return html
 }
 
