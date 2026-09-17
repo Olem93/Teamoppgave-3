@@ -3,6 +3,7 @@
 //Sjanse for å bli vinket inn til kontroll.
 
 function policeControl(){
+    
     if(rngMathRandom() >= kontrollsjanse){
         return "Du kjører forbi politikontrollen. Du prøver å se så uskyldig ut at du nesten blir mistenkelig. 👀";
     }
