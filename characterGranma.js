@@ -19,14 +19,13 @@ function granmaChoice(choice) {
       message =
         "Du kjører fort forbi bestemor, hun synes bilen din er stilig og sprek.";
       coolMeter += 100;
-    }
-  } else {
+    } else {
     message =
       "Du kjører fort forbi bestemor og treffer en søledam. Bestemor blir søkkvåt og sinna.";
     coolMeter -= 100;
+    }
   }
-
-  else if(choice === "driveSlow") {
+  if(choice === "driveSlow") {
     message =
       "Du senker farten, og glir sakte forbi i tretti mot bestemoren.";
     if (chance(10)) {
