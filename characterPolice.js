@@ -22,7 +22,7 @@ function policeDetection(){
     let detection = rngMathRandom();
 
     if(detection <= 30){
-        message = "👮 Politimannen lener seg inn mot vinduet... og sier “Hm. Hva er den lukta?” Du later som du ikke hørte spørsmålet. 👀"
+        message = "👮 Politimannen lener seg inn mot vinduet... og sier “Hm. Hva er den lukta?” Du later som du ikke hørte spørsmålet. Han gjentar. 👀"
         
         choice = /*HTML*/ `
             <button onclick="weedChoice('makeExcuse')">Bortforklar 😎</button>
@@ -37,8 +37,8 @@ function policeDetection(){
         message = "👮 Politimannen ser på deg. Så på øynene dine. Så på deg igjen, og spurte “Har du drukket?”";
         
         choice = /*HTML*/`
-            <button onclick="weedChoice('makeExcuse')">Bortforklar 😎</button>
-            <button onclick="weedChoice('flee')">Stikke av 👀 🚗🚓</button>       
+            <button onclick="drunkChoice('makeExcuse')">Bortforklar 😎</button>
+            <button onclick="drunkChoice('flee')">Stikke av 👀 🚗🚓</button>       
          `;
 
          message += choice;
@@ -78,7 +78,7 @@ function weedChoice(choice){
     else if (choice ==="flee"){
         
         if(chance(20)){
-            result = `
+            message += `
                 Du kom deg unna! 🚗 <br>+500 cool 😎</br>
             `;
 
@@ -86,7 +86,7 @@ function weedChoice(choice){
 
         }
         else{
-            result = `
+            message += `
                 Du blir tatt! Dette var en dårlig idé. <br>-500 cool 😢🚓</br>
             `;
 
@@ -98,6 +98,50 @@ function weedChoice(choice){
 
 }
 
+function drunkChoice(choice){
+    if(choice === "makeExcuse"){
+        
+        message = "Jeg har ikke drukket. Jeg bare lukter som en pub fordi jeg gikk forbi en. 😎";
+
+        if(chance(50)){
+        
+            message += `
+                Politimannen tror på forklaringen din! Du slapp unna! 😎
+            `;
+
+            coolMeter += 100;
+        }
+        else{
+
+            message += `
+                👮 "Den kjøper jeg ikke!" Du får en bot. 
+            `;
+
+            coolMeter -= 100;
+        }
+    }
+
+    else if (choice ==="flee"){
+        
+        if(chance(20)){
+            message += `
+                Du kom deg unna! 🚗 <br>+500 cool 😎</br>
+            `;
+
+            coolMeter += 500;
+
+        }
+        else{
+            message += `
+                Du blir tatt! Dette var en dårlig idé. <br>-500 cool 😢🚓</br>
+            `;
+
+            coolMeter -= 500;
+        }
+
+    }
+    updateView();
+}
 
 
 /*
