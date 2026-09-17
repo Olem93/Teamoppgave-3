@@ -8,7 +8,7 @@ function granmaTrigger() {
 
     message += choice;
   }
-  updateView()
+  updateView();
 }
 
 function granmaChoice(choice) {
@@ -20,24 +20,22 @@ function granmaChoice(choice) {
         "Du kjører fort forbi bestemor, hun synes bilen din er stilig og sprek.";
       coolMeter += 100;
     } else {
-    message =
-      "Du kjører fort forbi bestemor og treffer en søledam. Bestemor blir søkkvåt og sinna.";
-    coolMeter -= 100;
+      message =
+        "Du kjører fort forbi bestemor og treffer en søledam. Bestemor blir søkkvåt og sinna.";
+      coolMeter -= 100;
     }
   }
-  if(choice === "driveSlow") {
-    message =
-      "Du senker farten, og glir sakte forbi i tretti mot bestemoren.";
+  if (choice === "driveSlow") {
+    message = "Du senker farten, og glir sakte forbi i tretti mot bestemoren.";
     if (chance(10)) {
-      message =
-        "Bestemor blåser et kyss, og takker for at du viser hensyn.";
+      message = "Bestemor blåser et kyss, og takker for at du viser hensyn.";
       coolMeter += 40;
     }
   } else {
-    message =
-      "Du kveler motoren. Bestemor ler av deg.";
+    message = "Du kveler motoren. Bestemor ler av deg.";
     coolMeter -= 40;
   }
+  updateView();
 }
 
 // Bestemor:
