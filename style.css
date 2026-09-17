@@ -36,12 +36,12 @@
   border-left: 10px solid yellow;
   border-right: 10px solid yellow;
   margin: 2px auto;
-  background-color: grey;
+  background-color: black;
   bottom: 50px;
   top: 40px;
 }
 body {
-  background-color: black; 
+  background-color: gray; 
   display: flex;
   justify-content: center;
   align-items: center;
