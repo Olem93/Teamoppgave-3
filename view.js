@@ -10,6 +10,16 @@ function updateView() {
         <div>${message}</div>
         <br>
         <div>Din bil: ${showItems()}</div>
+
+        <div id="popup" style="display: none;">
+          <h2 id="popupMessage"></h2>
+
+            <div id="popupButtons">
+              <button onclick="closePopup()" style="padding: 10px 20px">
+                OK
+              </button>
+            </div>
+          </div>
     `;
 
   document.getElementById("appOppgave3").innerHTML = html;
