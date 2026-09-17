@@ -197,3 +197,35 @@ function squirrelRoadkill(){
     }
     updateView();
 }
+
+
+function showPopup(){
+    console.log(message)
+    if (message === ""){
+        return
+    }
+    let html = /*HTML*/ `
+        <h2 id="popupMessage">${message}</h2>
+            <div id="popupButtons">
+              <button onclick="closePopup()" style="padding: 10px 20px">
+                OK
+              </button>
+            </div>
+        <br>
+    `
+
+    
+    //let popup = document.getElementById('popup');
+    //let popupMessage = document.getElementById('popupMessage');
+
+    //popup.style.display = "block"
+
+    //popupMessage.innerHTML = message;
+    return html
+}
+
+function closePopup(){
+    document.getElementById('popup').style.display = "none";
+}
+
+//<div id="popup" style="display: block;"></div>

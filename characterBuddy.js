@@ -24,7 +24,10 @@ let venner = [
   "Eskil",
   "Terje",
   "Jens",
-  "Per Gynt",
+  "Peer Gynt",
+  "Henrik Ibsen",
+  "Michael Jackson",
+  "Obama"
 ]
 
 function meetBuddy(){
@@ -37,25 +40,24 @@ function meetBuddy(){
   <br>
   <button onclick="buddyDialog()">Gjem deg og lat som om du ikke så dem</button>
   `
-
-  
   updateView()
 }
 
 function buddyDialog() {
   let rng = null;
     rng = Math.floor(Math.random() * 2)  //0 er feil svar, 1 er riktig
-    console.log(rng)
-    if (rng === 0 && coolMeter >= 80){
+    if (rng === 1 && coolMeter >= 80){
       message = `Vennen din virker imponert. De hilser tilbake og 
       sier "${highCoolDialogs[Math.floor(Math.random() * highCoolDialogs.length)]}"`
       coolMeter += 20;
-    } else if (rng === 0 && coolMeter < 80){
+    } else if (rng === 1 && coolMeter < 80){
       message = `Vennen din hilser tilbake, men det virker ikke som om de er 
       spesielt imponert over bilen din. De sier "${lowCoolDialogs[Math.floor(Math.random() * lowCoolDialogs.length)]}"`
       coolMeter += 10;
-    } else if (rng === 1){
+    } else if (rng === 0){
       message = `${wrongAnswer[Math.floor(Math.random() * wrongAnswer.length)]}"`
+      coolMeter -= 10
     }
   updateView()
 }
+

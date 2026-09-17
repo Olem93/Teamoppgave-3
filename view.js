@@ -6,19 +6,13 @@ function updateView() {
         <div class="counter" style="margin-bottom: 50px">Antall ekorn påkjørt: ${numberSquirrelKill}</div>
         <section id="item-grid">${spawnItems()}</section>
         <button onclick="setRandomEncounter()">Ekkort Test</button>
+        <div></div>
+
+        <!--              POP UP VINDU                   -->
         <div>${message}</div>
-        <br>
+        <button onclick="showPopup()">Popup test</button>
+
         <div>Din bil: ${showItems()}</div>
-
-        <div id="popup" style="display: none;">
-          <h2 id="popupMessage"></h2>
-
-            <div id="popupButtons">
-              <button onclick="closePopup()" style="padding: 10px 20px">
-                OK
-              </button>
-            </div>
-          </div>
     `;
 
   document.getElementById("appOppgave3").innerHTML = html;
