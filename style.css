@@ -41,7 +41,7 @@
   top: 40px;
 }
 body {
-  background-color: black; 
+  background-color: rgb(153, 153, 153); 
   display: flex;
   justify-content: center;
   align-items: center;
