@@ -1,144 +1,84 @@
 
-
 //Sjanse for å bli vinket inn til kontroll.
 
-function policeControl(){
+// function policeControl(){
     
-    if(rngMathRandom() >= kontrollsjanse){
-        message = "Du kjører forbi politikontrollen. Du prøver å se så uskyldig ut at du nesten blir mistenkelig. 👀";
-    }
-    else{
-        message = "🚨 Du blir vinket inn til kontrollen."
+//     if(rngMathRandom() >= kontrollsjanse){
+//         message = "Du kjører forbi politikontrollen. Du prøver å se så uskyldig ut at du nesten blir mistenkelig. 👀";
+//     }
+//     else{
+//         message = "🚨 Du blir vinket inn til kontrollen."
         
-        message += policeDetection();
-    }
-    updateView();
-}
+//         message += policeDetection();
+//     }
+//     updateView();
+// }
 
 //Hva oppdager politiet?
 
 function policeDetection(){
-
     let detection = rngMathRandom();
 
     if(detection <= 30){
         message = "👮 Politimannen lener seg inn mot vinduet... og sier “Hm. Hva er den lukta?” Du later som du ikke hørte spørsmålet. Han gjentar. 👀"
-        
         choice = /*HTML*/ `
             <button onclick="weedChoice('makeExcuse')">Bortforklar 😎</button>
             <button onclick="weedChoice('flee')">Stikke av 👀</button>
         `;
-
         message += choice;
-
-        return message;
-    }
-    else if(detection <= 60){
+    } else if(detection <= 60){
         message = "👮 Politimannen ser på deg. Så på øynene dine. Så på deg igjen, og spurte “Har du drukket?”";
-        
         choice = /*HTML*/`
             <button onclick="drunkChoice('makeExcuse')">Bortforklar 😎</button>
             <button onclick="drunkChoice('flee')">Stikke av 👀 🚗🚓</button>       
          `;
-
          message += choice;
-
-         return message;
-    }
-    else{
+    } else {
         message = "👮 Politimannen kikker inn i bilen. Han finner ingenting mistenkelig. “Kjør forsiktig” sa han. Du nikker, smiler og kjører av gårde som om ingenting har skjedd.";
-
-        return message;
     }
+    updateView()
 }
 
 function weedChoice(choice){
     if(choice === "makeExcuse"){
-        
-        message = "Det er bare en ny type luftfrisker. Den heter Jamaica Breeze. 🌿😎";
-
+        message = "Det er bare en ny type luftfrisker. Den heter Jamaica Breeze. 🌿😎"
         if(chance(50)){
-        
-            message += `
-                Politimannen tror på forklaringen din! Du slapp unna! 😎
-            `;
-
+            message = `Politimannen tror på forklaringen din! Du slapp unna! 😎`;
             coolMeter += 100;
-        }
-        else{
-
-            message += `
-                👮 "Den kjøper jeg ikke!" Du får en bot. 
-            `;
-
+        } else {
+            message = `👮 "Den kjøper jeg ikke!" Du får en bot. `;
             coolMeter -= 100;
         }
-    }
-
-    else if (choice ==="flee"){
-        
+    } else if (choice ==="flee") {
         if(chance(20)){
-            message += `
-                Du kom deg unna! 🚗 <br>+500 cool 😎</br>
-            `;
-
+            message = `Du kom deg unna! 🚗 <br>+500 cool 😎</br>`;
             coolMeter += 500;
-
-        }
-        else{
-            message += `
-                Du blir tatt! Dette var en dårlig idé. <br>-500 cool 😢🚓</br>
-            `;
-
+        } else {
+            message = `Du blir tatt! Dette var en dårlig idé. <br>-500 cool 😢🚓</br>`;
             coolMeter -= 500;
         }
-
     }
     updateView();
-
 }
 
 function drunkChoice(choice){
     if(choice === "makeExcuse"){
-        
         message = "Jeg har ikke drukket. Jeg bare lukter som en pub fordi jeg gikk forbi en. 😎";
-
-        if(chance(50)){
-        
-            message += `
-                Politimannen tror på forklaringen din! Du slapp unna! 😎
-            `;
-
+        if(chance(50)){ 
+            message = `Politimannen tror på forklaringen din! Du slapp unna! 😎`;
             coolMeter += 100;
-        }
-        else{
-
-            message += `
-                👮 "Den kjøper jeg ikke!" Du får en bot. 
-            `;
-
+        } else {
+            message = `👮 "Den kjøper jeg ikke!" Du får en bot.`;
             coolMeter -= 100;
         }
-    }
-
-    else if (choice ==="flee"){
-        
+    } else if (choice ==="flee") {
         if(chance(20)){
-            message += `
-                Du kom deg unna! 🚗 <br>+500 cool 😎</br>
-            `;
-
+            message = `Du kom deg unna! 🚗 <br>+500 cool 😎</br>`;
             coolMeter += 500;
-
-        }
-        else{
-            message += `
-                Du blir tatt! Dette var en dårlig idé. <br>-500 cool 😢🚓</br>
-            `;
-
+        } else {
+            message = `Du blir tatt! Dette var en dårlig idé. <br>-500 cool 😢🚓</br>`;
             coolMeter -= 500;
         }
-
     }
     updateView();
 }
@@ -171,26 +111,21 @@ Politi kontroll:
 function squirrelRoadkill(){
     if(chance(50)){
         numberSquirrelKill++;
-
         message = `
             BANG! Du kjørte på et ekorn! 🐿️💥🚗
             <br>
             -10 cool 😵‍💫
             <br>
         `;
-
         coolMeter -= 10;
-    }
-    else if(chance(75)){
+    } else if(chance(75)) {
         message = `
             🚗 Et ekorn løp over veien. Du klarte akkurat å unngå det! 🐿️
             <br>
             +10 cool 😎
         `;
-
         coolMeter += 10;
-    }
-    else{
+    } else {
         message = `
             Veien er ekornfri... foreløpig. 🐿️👀
         `;
@@ -199,33 +134,5 @@ function squirrelRoadkill(){
 }
 
 
-function showPopup(){
-    console.log(message)
-    if (message === ""){
-        return
-    }
-    let html = /*HTML*/ `
-        <h2 id="popupMessage">${message}</h2>
-            <div id="popupButtons">
-              <button onclick="closePopup()" style="padding: 10px 20px">
-                OK
-              </button>
-            </div>
-        <br>
-    `
-
-    
-    //let popup = document.getElementById('popup');
-    //let popupMessage = document.getElementById('popupMessage');
-
-    //popup.style.display = "block"
-
-    //popupMessage.innerHTML = message;
-    return html
-}
-
-function closePopup(){
-    document.getElementById('popup').style.display = "none";
-}
 
 //<div id="popup" style="display: block;"></div>

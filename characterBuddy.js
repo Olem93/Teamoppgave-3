@@ -18,7 +18,6 @@ let venner = [
   "Geir",
   "Eskil",
   "Terje",
-  "Jens",
   "Peer Gynt",
   "Henrik Ibsen",
   "Michael Jackson",
@@ -27,7 +26,7 @@ let venner = [
 
 function meetBuddy(){
   message = /*HTML*/ `Du møter en venn. Det er ${venner[Math.floor(Math.random() * venner.length)]}!
-  Vennen din hilser. Hva sier du?
+  Hva sier du?
   <br>
   <button onclick="buddyDialog()">Halla broshan!</button>
   <br>
@@ -39,18 +38,17 @@ function meetBuddy(){
 }
 
 function buddyDialog() {
-  let rng = null;
-    rng = Math.floor(Math.random() * 2)  //0 er feil svar, 1 er riktig
-    if (rng === 1 && coolMeter >= 80){
-      message = `Vennen din virker imponert. De hilser tilbake og 
+  let rng = Math.floor(Math.random() * 3)  //0 er feil svar, 1 og 2 er riktig
+    if (rng === 1 || rng === 2 && coolMeter >= 150){
+      message = `Vennen din virker imponert. De hilser og 
       sier "${highCoolDialogs[Math.floor(Math.random() * highCoolDialogs.length)]}"`
       coolMeter += 20;
-    } else if (rng === 1 && coolMeter < 80){
-      message = `Vennen din hilser tilbake, men det virker ikke som om de er 
+    } else if (rng === 1 || rng === 2 && coolMeter < 150){
+      message = `Vennen ser deg og hilser, men det virker ikke som om de er 
       spesielt imponert over bilen din. De sier "${lowCoolDialogs[Math.floor(Math.random() * lowCoolDialogs.length)]}"`
       coolMeter += 10;
     } else if (rng === 0){
-      message = `${wrongAnswer[Math.floor(Math.random() * wrongAnswer.length)]}"`
+      message = "Vennen din later som om de ikke ser deg... Det var flaut😥 Du kjenner du blir mindre kul allerede..."
       coolMeter -= 10
     }
   updateView()

@@ -1,17 +1,21 @@
 function takeItem(item) {
   coolMeter += item.Points
-  updateView()
+  setRandomEncounter()
 }
 
 function setRandomEncounter(){
-  //randomEncounter = Math.floor(Math.random()*4)
-  randomEncounter = 0
+  randomEncounter = Math.floor(Math.random()*7)
+  console.log(randomEncounter)
   if (randomEncounter === 0){
     squirrelRoadkill()
   } else if (randomEncounter === 1) {
-    policeControl()
+    policeDetection()
   } else if (randomEncounter === 2) {
     granmaTrigger()
+  } else if (randomEncounter === 3) {
+    meetBuddy()
+  } else {
+    updateView()
   }
 }
 

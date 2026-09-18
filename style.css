@@ -1,5 +1,6 @@
 
 #item-grid{
+    color: white;
     text-align: center;
     display: grid;
     grid-template-columns: repeat(4, 150px);
@@ -8,8 +9,7 @@
 }
 
 .rute{ 
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px;
     height: 80px;
     width: 80px;
 }
@@ -22,6 +22,8 @@
 
 
 .lane {
+  opacity: 80%;
+  z-index: -2;
   position: absolute;
   left: 50%;
   top: 0;
@@ -30,25 +32,21 @@
   transform: translateX(-50%);
  }
  .road {
-  position: relative;
-  width: 300px;
-  height: 380px;
-  border-left: 10px solid yellow;
-  border-right: 10px solid yellow;
+  opacity: 80%;
+  z-index: -1;
+  position: absolute;
+  width: 800px;
+  height: 500px;
+  border-left: 10px solid #c99609;
+  border-right: 10px solid #c99609;
   margin: 2px auto;
+  margin-top: 50px;
   background-color: black;
   bottom: 50px;
   top: 40px;
 }
-body {
-  background-color: gray; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
+
+
 .score {
   font-size: 22px;
   font-weight: bold;
@@ -62,7 +60,7 @@ body {
 }
 
 #popup{
-    display: none;
+    z-index: 99;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -71,9 +69,9 @@ body {
     width: 500px;
     padding: 30px;
 
-    background-color: #2e3022;
+    background-color: #283f2c;
     color: #ffffff;
-    border: 5px solid black;
+    border: 2px solid #ffffff;
     text-align: center;
 
     font-size: 24px;

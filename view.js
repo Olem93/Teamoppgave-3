@@ -5,15 +5,13 @@ function updateView() {
         <h1 class="counter">Cool car, bro</h1>
         <div class="counter">Kul-o-meter😎🔥: ${coolMeter}</div>
         <div class="counter" style="margin-bottom: 50px">Antall ekorn påkjørt: ${numberSquirrelKill}</div>
-        <section id="item-grid">${spawnItems()}</section>
-        <button onclick="setRandomEncounter()">Ekkort Test</button>
-        <div></div>
+        <section id="item-grid">${spawnItems()}
+          <div class="road">
+            <div class="lane"></div></div>
+        </section>
 
         <!--              POP UP VINDU                   -->
-        <div>${message}</div>
-        <button onclick="showPopup()">Popup test</button>
-
-        <div>Din bil: ${showItems()}</div>
+        <div>${showPopup()}</div>
     `;
 
   document.getElementById("appOppgave3").innerHTML = html;
@@ -34,10 +32,24 @@ function spawnItems() {
   return html;
 }
 
-function showItems(){
-  let html = `
-    <div></div>
-  `
-  return html
+function showPopup(){
+    if (message === ""){
+        return ""
+    }
+    let html = /*HTML*/ `
+      <div id="popup">
+        <h2 >${message}</h2>
+            <div id="popupButtons">
+              <button onclick="closePopup()" style="padding: 10px 20px;">
+                OK
+              </button>
+            </div>
+        </div>
+    `
+    return html
 }
 
+function closePopup(){
+  message = "";
+  updateView()
+}
